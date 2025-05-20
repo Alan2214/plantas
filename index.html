@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="jspdf.min.js"></script>
+    <script src="productos.js"></script>
+    
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3>Nota de Remisión</h3>
+                <hr>
+                <form id="form">
+                    <div class="mb-3">
+                       
+                        
+                            <label for="nombre" class="form-label">Remision</label>
+                            <input type="text" class="form-control" id="remision">
+                    
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="domicilio" class="form-label">Domicilio</label>
+                            <input type="text" class="form-control" id="domicilio">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="telefono">
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="direccion" class="form-label">Condiciones</label>
+                            <input type="text" class="form-control" id="condiciones">
+                        </div>
+                    </div>
+                    <h4>Producto 1</h4>
+                    <hr>
+                    <div class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="cantidad">Cantidad</label>
+                            <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="descripcion">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion" placeholder="Descripcion">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="p_unitario">Precio Unitario</label>
+                            <input type="text" class="form-control" id="p_unitario" placeholder="Precio Unitario">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="importe">Importe</label>
+                            <input type="text" class="form-control" id="importe" placeholder="Importe">
+                          </div>
+                      </div>
+                      <h4>Producto 2</h4>
+                      <hr>
+                      <div class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="cantidad2">Cantidad</label>
+                            <input type="text" class="form-control" id="cantidad2" placeholder="Cantidad">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="descripcion2">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion2" placeholder="Descripcion">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="p_unitario2">Precio Unitario</label>
+                            <input type="text" class="form-control" id="p_unitario2" placeholder="Precio Unitario">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="importe2">Importe</label>
+                            <input type="text" class="form-control" id="importe2" placeholder="Importe">
+                          </div>
+                      </div>
+
+                      <h4>Producto 3</h4>
+                      <hr>
+                      <div class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="cantidad3">Cantidad</label>
+                            <input type="text" class="form-control" id="cantidad3" placeholder="Cantidad">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="descripcion3">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion3" placeholder="Descripcion">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="p_unitario3">Precio Unitario</label>
+                            <input type="text" class="form-control" id="p_unitario3" placeholder="Precio Unitario">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="importe3">Importe</label>
+                            <input type="text" class="form-control" id="importe3" placeholder="Importe">
+                          </div>
+                      </div>
+
+                      <h4>Producto 4</h4>
+                      <hr>
+                      <div class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="cantidad4">Cantidad</label>
+                            <input type="text" class="form-control" id="cantidad4" placeholder="Cantidad">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="descripcion4">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion4" placeholder="Descripcion">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="p_unitario4">Precio Unitario</label>
+                            <input type="text" class="form-control" id="p_unitario4" placeholder="Precio Unitario">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="importe4">Importe</label>
+                            <input type="text" class="form-control" id="importe4" placeholder="Importe">
+                          </div>
+                      </div>
+                      
+                      <h4>Producto 5</h4>
+                      <hr>
+                      <div class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="cantidad5">Cantidad</label>
+                            <input type="text" class="form-control" id="cantidad5" placeholder="Cantidad">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="descripcion5">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion5" placeholder="Descripcion">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="p_unitario5">Precio Unitario</label>
+                            <input type="text" class="form-control" id="p_unitario5" placeholder="Precio Unitario">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="importe5">Importe</label>
+                            <input type="text" class="form-control" id="importe5" placeholder="Importe">
+                          </div>
+                      </div>
+                      <hr>
+                      <br>
+                      <div class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="subtotal">Sub-Total</label>
+                            <input type="text" class="form-control" id="subtotal" placeholder="Sub-Total">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="visually-hidden" for="total">Total</label>
+                            <input type="text" class="form-control" id="total" placeholder="Total">
+                          </div>
+                      </div>
+                      <hr>
+                      
+                      <div class="row mb-3">
+                        <div class="col-md-3">
+                            <div>
+                                <label for="" class="form-label">Ya esta Pagado?</label>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="discapacidad" class="form-check-input"
+                                        id="discapacidad-si" value="1">
+                                    <label for="discapacidad-si" class="form-check-label">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="discapacidad" class="form-check-input"
+                                        id="discapacidad-no" value="0" checked>
+                                    <label for="discapacidad-no" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <hr>
+                   
+                    <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
